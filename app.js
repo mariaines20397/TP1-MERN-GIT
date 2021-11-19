@@ -16,9 +16,14 @@ function getCountryByIso3(isoCode){
  * @param  {string} language example: "es"
  * @returns {string}
  */
-function getCountryTranslatedName(isoCode, language){
+function getCountryTranslatedName( isoCode, language){
     //Complete with your code
-   
+    const iso=countries.filter(iso => iso.iso3 == isoCode)   
+    //return (iso)
+    const mostrarlang=countries.filter(lang => lang.translations[language])
+    return (mostrarlang, iso)
+
+    
 }
 /**Get an array of all the countries with the specified subregion
  * @param  {string} subregion
@@ -26,6 +31,7 @@ function getCountryTranslatedName(isoCode, language){
  */
 function getCountriesBySubregion(subregion){
     //Complete with your code
+    
 }
 
 function main() {
@@ -35,13 +41,13 @@ function main() {
         '\n');
     console.log(
         '///// Ejercicio 2 /////\n',
-        getCountryTranslatedName('ARG', 'ja'),
+        getCountryTranslatedName( 'ARG','ja'),
         '\n');
-    /*console.log(
+    console.log(
         '///// Ejercicio 3 /////\n',
         getCountriesBySubregion('South America'),
         '\n');
-*/
+
 }
 
 main();
